@@ -1,0 +1,67 @@
+<div class="form-wrapper">
+  <form (ngSubmit)="onSubmit(accountForm)" #accountForm="ngForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Category</mat-label>
+      <input matInput type="text" class="form-control" id="category"
+      required
+              placeholder="Category"
+              ngModel
+                name="category"
+                [(ngModel)]="arie.category"
+                #category="ngModel"
+      >
+                <mat-error *ngIf="!category.valid"> Please insert category!</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <input matInput type="text" class="form-control" id="description"
+      required
+              placeholder="Description"
+              ngModel
+                name="description"
+                [(ngModel)]="arie.description">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Id</mat-label>
+      <input matInput type="text" class="form-control" id="id"
+      required
+              placeholder="Id"
+              ngModel
+                name="id"
+                [(ngModel)]="arie.id">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Image</mat-label>
+      <input matInput type="text" class="form-control" id="image"
+      required
+              placeholder="Image"
+              ngModel
+                name="image"
+                [(ngModel)]="arie.image">
+    </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" class="form-control" id="name"
+            required
+                    placeholder="Name"
+                    ngModel
+                      name="name"
+                      [(ngModel)]="arie.name">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+      <mat-label>Stack</mat-label>
+      <input matInput type="text" class="form-control" id="stack"
+      required
+              placeholder="Stack"
+              ngModel
+                name="stack"
+                [(ngModel)]="arie.stack">
+    </mat-form-field>
+    <div *ngIf="showMsg">
+    <p class="alert alert-success">
+        <strong>Felicitări! Ai introdus o nouă arie!</strong> 
+      </div>
+    <button [disabled]="!accountForm.valid">Submit</button>
+
+  </form>
+</div>

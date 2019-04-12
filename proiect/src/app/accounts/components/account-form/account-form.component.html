@@ -1,0 +1,68 @@
+<div class="form-wrapper">
+  <form (ngSubmit)="onSubmit(accountForm)" #accountForm="ngForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput type="text" class="form-control" id="email"
+      required
+              placeholder="Email"
+              ngModel
+                name="email"
+                [(ngModel)]="account.email"
+                #email="ngModel"
+      >
+                <mat-error *ngIf="!email.valid"> Please insert email!</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Nume</mat-label>
+      <input matInput type="text" class="form-control" id="nume"
+      required
+              placeholder="Nume"
+              ngModel
+                name="nume"
+                [(ngModel)]="account.nume">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Prenume</mat-label>
+      <input matInput type="text" class="form-control" id="surname"
+      required
+              placeholder="Prenume"
+              ngModel
+                name="prenume"
+                [(ngModel)]="account.prenume">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Linkedin</mat-label>
+      <input matInput type="text" class="form-control" id="linkedin"
+              placeholder="linkedin"
+              ngModel
+                name="linkedin"
+                [(ngModel)]="account.linkedin">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Telefon</mat-label>
+      <input matInput type="text" class="form-control" id="phone"
+              placeholder="Telefon"
+              ngModel
+                name="phone"
+                [(ngModel)]="account.phone">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Scoala/Facultate</mat-label>
+      <input matInput type="text" class="form-control" id="school"
+              placeholder="Scoala/Facultate"
+              ngModel
+                name="school"
+                [(ngModel)]="account.school">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Adresa</mat-label>
+      <input matInput type="text" class="form-control" id="address"
+              placeholder="Adresa"
+              ngModel
+                name="address"
+                [(ngModel)]="account.address">
+    </mat-form-field>
+    <button [disabled]="!accountForm.valid">Submit</button>
+
+  </form>
+</div>
